@@ -1,0 +1,39 @@
+Xtrim Free + Premium tier system
+================================
+
+Premium is owner-managed (no payment processor included).
+
+Owner commands:
+  <premium add GUILD_ID 30
+  <premium add GUILD_ID 0        # lifetime
+  <premium remove GUILD_ID
+  <premium list
+
+Server commands:
+  <premium status
+  <pstats                        # Premium only
+  <pannounce Your announcement  # Premium + Manage Messages
+
+The owner IDs come from OWNER_IDS in bot/.env, comma-separated.
+Example:
+  OWNER_IDS=123456789012345678
+
+Premium data is stored locally in bot/data/premium.json.
+
+Important:
+This is an entitlement/tier system, not a payment/subscription system. No card/payment credentials are collected.
+
+
+Premium feature enforcement added in this build:
+  - No Prefix (<np) requires Premium in the current server. Existing NP entries no longer bypass this gate in premium-disabled servers.
+  - Per-server bot profile commands require Premium + Manage Server:
+      <pbot avatar <image/url>
+      <pbot bio <text>
+      <pbot show
+      <pbot avatar reset
+      <pbot bio reset
+  - Bot avatar and bio use Discord/Pycord per-server bot member profile support; changing one server does not change the bot's profile in other servers.
+  - Bot profile bio is limited to 190 characters.
+  - Premium remains owner-managed via <premium add/remove/list.
+
+Command aliases: <pbot and <botprofile.

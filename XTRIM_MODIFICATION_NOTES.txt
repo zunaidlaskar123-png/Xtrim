@@ -1,0 +1,31 @@
+XTRIM MODIFICATION NOTES
+
+1. Emoji system:
+   All emoji constants in bot/utils/emoji.py now point to:
+   <a:EA_RightArrow:1523644850199728260>
+
+   IMPORTANT: This is a Discord custom emoji. Discord does not guarantee that a server
+   can render a custom emoji from another server. If the target server/bot cannot use
+   that external emoji, Discord may show the raw emoji text instead. A truly universal
+   animated custom emoji is not possible with a normal server emoji. Unicode emoji are
+   universal but are not animated.
+
+2. Status:
+   The bot status rotation was changed to Xtrim branding:
+   - <prefix>help | Xtrim Security
+   - <user count> users
+   - <guild count> servers
+   - Protecting WAJOOD
+   - Xtrim • <help
+
+3. Premium scan:
+   No actual premium-access enforcement check (e.g. is_premium, premium_only,
+   subscription-plan gate) was found in the bot source. "Premium" references found
+   are mainly Discord server boost fields, a Premium upsell in tracking.py, the
+   PREMIUM emoji, and dashboard marketing text. No premium command lock was removed
+   or added.
+
+4. Branding:
+   The default brand was changed to Xtrim in config/env examples and dashboard display
+   text. Set brand_name='Xtrim' in your real bot/.env as well if you already have a
+   .env file.
